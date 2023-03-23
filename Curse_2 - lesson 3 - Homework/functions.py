@@ -7,7 +7,7 @@ def load_students(path) -> list:
     :param path: путь к файлу
     :return: словарь с данными студентов
     """
-    with open(path, "r") as json_file:
+    with open(path, "r", encoding="UTF-8") as json_file:
         return json.load(json_file)
 
 
@@ -17,7 +17,7 @@ def load_professions(path) -> list:
     :param path: путь к файлу
     :return: словарь с профессиональными требованиями
     """
-    with open(path, "r") as json_file:
+    with open(path, "r", encoding="UTF-8") as json_file:
         return json.load(json_file)
 
 
