@@ -1,6 +1,7 @@
 import json
 
-def load_students(path):
+
+def load_students(path) -> list:
     """
     Загружает список студентов из файла
     :param path: путь к файлу
@@ -10,7 +11,7 @@ def load_students(path):
         return json.load(json_file)
 
 
-def load_professions(path):
+def load_professions(path) -> list:
     """
     Загружает список профессий из файла
     :param path: путь к файлу
@@ -20,7 +21,7 @@ def load_professions(path):
         return json.load(json_file)
 
 
-def get_student_by_pk(pk, work_list):
+def get_student_by_pk(pk, work_list) -> dict or bool:
     """
     Получает словарь с данными студента по его pk
     :param pk: номер студента
@@ -33,7 +34,7 @@ def get_student_by_pk(pk, work_list):
     return False
 
 
-def get_profession_by_title(title, work_list):
+def get_profession_by_title(title, work_list) -> dict or bool:
     """
     Получает словарь с инфо о профессии по названию
     :param title: название профессии
@@ -46,7 +47,7 @@ def get_profession_by_title(title, work_list):
     return False
 
 
-def check_fitness(student, profession):
+def check_fitness(student, profession) -> dict:
     """
     Выводит инфо о соответствии студента указанной специальности
     :param student: имя студента
@@ -55,13 +56,9 @@ def check_fitness(student, profession):
     """
     student_skills = set(student['skills'])
     profession_skills = set(profession['skills'])
-    student_knowledge = profession_skills.intersection(student_skills)
-    student_ignorance = profession_skills - student_skills
-    percent = round(len(student_knowledge) / len(profession_skills) * 100)
-    fitness = {
-        'percent': percent,
-        'knowledge': student_knowledge,
-        'ignorance': student_ignorance
-    }
-    return fitness
+    fitness = dict()
+    fitness['knowledge'] = profession_skills.intersection(student_skills)
+    fitness['ignorance'] = profession_skills - student_skills
+    fitness['percent'] = round(len(fitness['knowledge']) / len(profession_skills) * 100)
 
+    return fitness
