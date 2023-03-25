@@ -21,7 +21,7 @@ def load_professions(path) -> list:
         return json.load(json_file)
 
 
-def get_student_by_pk(pk, work_list) -> dict or bool:
+def get_student_by_pk(pk, work_list) -> dict:
     """
     Получает словарь с данными студента по его pk
     :param pk: номер студента
@@ -31,10 +31,9 @@ def get_student_by_pk(pk, work_list) -> dict or bool:
     for person in work_list:
         if person['pk'] == pk:
             return person
-    return False
 
 
-def get_profession_by_title(title, work_list) -> dict or bool:
+def get_profession_by_title(title, work_list) -> dict:
     """
     Получает словарь с инфо о профессии по названию
     :param title: название профессии
@@ -44,7 +43,6 @@ def get_profession_by_title(title, work_list) -> dict or bool:
     for profession in work_list:
         if profession['title'] == title:
             return profession
-    return False
 
 
 def check_fitness(student, profession) -> dict:

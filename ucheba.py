@@ -1944,4 +1944,19 @@
 
 # import requests
 
+# print([chr(96 + i) * i for i in range(1, 27)])
 
+# n = int(input())
+# list_ = [int(input()) for _ in range(n)]
+# print([sum(list_[i: i + 2]) for i in range(len(list_) - 1)])
+
+
+# n = input().split()
+#
+# count = 0
+# for i in range(len(n)):
+#     for j in n[i+1:]:
+#         if n[i] == j:
+#             count += 1
+#
+# print(count)
