@@ -1452,7 +1452,6 @@
 # print((lambda x: abs(x))(x))
 
 
-
 # def func_show(func):
 #     def func_vsp(*args, **kwards):
 #         res = func(*args, **kwards)
@@ -1960,3 +1959,164 @@
 #             count += 1
 #
 # print(count)
+
+
+# def get_unique_names(names):
+#     unique_names = []
+#     for name in names:
+#         if not name in unique_names:
+#             unique_names.append(name)
+#     return unique_names
+
+
+# def translate_in_morse(word):
+#     morse_code = {
+#         "0": "-----",
+#         "1": ".----",
+#         "2": "..---",
+#         "3": "...--",
+#         "4": "....-",
+#         "5": ".....",
+#         "6": "-....",
+#         "7": "--...",
+#         "8": "---..",
+#         "9": "----.",
+#         "a": ".-",
+#         "b": "-...",
+#         "c": "-.-.",
+#         "d": "-..",
+#         "e": ".",
+#         "f": "..-.",
+#         "g": "--.",
+#         "h": "....",
+#         "i": "..",
+#         "j": ".---",
+#         "k": "-.-",
+#         "l": ".-..",
+#         "m": "--",
+#         "n": "-.",
+#         "o": "---",
+#         "p": ".--.",
+#         "q": "--.-",
+#         "r": ".-.",
+#         "s": "...",
+#         "t": "-",
+#         "u": "..-",
+#         "v": "...-",
+#         "w": ".--",
+#         "x": "-..-",
+#         "y": "-.--",
+#         "z": "--..",
+#         ".": ".-.-.-",
+#         ",": "--..--",
+#         "?": "..--..",
+#         "!": "-.-.--",
+#         "-": "-....-",
+#         "/": "-..-.",
+#         "@": ".--.-.",
+#         "(": "-.--.",
+#         ")": "-.--.-"
+#     }
+#     t = " ".maketrans(morse_code)
+#     return word.lower().translate(t)
+#
+#
+# while (lines := input()) != "stop":
+#     for sentence in lines.split():
+#         encode = translate_in_morse(" ".join(list(sentence)))
+#         print(encode)
+
+
+# x = [i for i in input().split("-")]
+# if x[0] == "7":
+#     print(["NO", "YES"][all([len(x[i]) == [1, 3, 3, 4][i] and x[i].isdigit() for i in range(len(x))])])
+# elif len(x) == 3:
+#     print(["NO", "YES"][all([len(x[i]) == [3, 3, 4][i] and x[i].isdigit() for i in range(len(x))])])
+# else:
+#     print("NO")
+
+
+# class Car:
+#     pass
+#
+#
+# setattr(Car, "model", "Тойота")
+# setattr(Car, "color", "Розовый")
+# setattr(Car, "number", "П111УУ77")
+#
+# print(Car.__dict__["color"])
+
+
+# class MediaPlayer:
+#
+#     def open(self, file):
+#         self.filename = file
+#
+#     def play(self):
+#         print(f"Воспроизведение {self.filename}")
+#
+#
+# media1 = MediaPlayer()
+# media2 = MediaPlayer()
+#
+# media1.open("filemedia1")
+# media2.open("filemedia2")
+#
+# media1.play()
+# media2.play()
+
+
+# class Graph:
+#     LIMIT_Y = [0, 10]
+#
+#     def set_data(self, data):
+#         self.data = data
+#
+#     def draw(self):
+#         print(*[i for i in self.data if i in range(self.LIMIT_Y[-1] + 1)])
+#
+#
+# graph_1 = Graph()
+# graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
+# graph_1.draw()
+
+
+# import sys
+#
+# class StreamData:
+#
+#     def create(self, fields, lst_values):
+# 
+#         if len(fields) != len(lst_values):
+#             return False
+#         elif not all([type(i) == str for i in fields]):
+#             return False
+#
+#         for i in range(len(fields)):
+#             setattr(self, fields[i], lst_values[i])
+#         if self.__dict__:
+#             return True
+
+
+# class Flight:
+#
+#     def __init__(self, city_from, city_to):
+#         self.city_from = city_from
+#         self.city_to = city_to
+#
+#
+#     def __str__(self):
+#         return f"{type(self).__name__} from {self.city_from} to {self.city_to}"
+#
+# print(Flight(input(), input()))
+
+# class Flight:
+#
+#     def __init__(self, city_from, city_to):
+#         self.city_from = city_from
+#         self.city_to = city_to
+#
+#     def __repr__(self):
+#         return f"Flight(city_from='{self.city_from}', city_to='{self.city_to}')"
+#
+# print(Flight(input(), input()))

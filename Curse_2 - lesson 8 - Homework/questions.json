@@ -1,0 +1,21 @@
+[
+  {"text_question": "What's the biggest animal in the world?",
+  "complexity": 2,
+  "correct_answer": "blue whale"},
+
+  {"text_question": "What is the smallest country in the world?",
+  "complexity": 3,
+  "correct_answer": "Vatican"},
+
+  {"text_question": "Which of Stephen King’s novels was the first to be adapted into a movie?",
+  "complexity": 8,
+  "correct_answer": "Carrie"},
+
+  {"text_question": "Which movie won the first ever Oscar for Best Animated Film?",
+  "complexity": 7,
+  "correct_answer": "Shrek"},
+
+  {"text_question": "The answer to Life, the Universe, and Everything.",
+  "complexity": 10,
+  "correct_answer": "42"}
+]

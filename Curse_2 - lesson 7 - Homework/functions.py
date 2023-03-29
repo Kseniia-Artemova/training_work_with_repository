@@ -60,3 +60,4 @@ def check_fitness(student, profession) -> dict:
     fitness['percent'] = round(len(fitness['knowledge']) / len(profession_skills) * 100)
 
     return fitness
+
