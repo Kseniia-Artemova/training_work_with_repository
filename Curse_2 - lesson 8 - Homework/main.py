@@ -1,8 +1,8 @@
 # Импортируем модуль с функциями и
 # модуль os для указания пути к файлу
 import os
-from My_Packages.Homework_8 import utils as u
-from My_Packages.Homework_8.class_Question import *
+import utils as u
+from class_Question import Question
 
 PATH_TO_FILE = os.path.join("questions.json")
 
@@ -18,7 +18,7 @@ print("Игра начинается!")
 # правильность ответа так же отражается на свойствах объектов
 # класса Question. Выводим текст о правильности или ошибочности
 # ответа
-for num, question in zip(range(1, len(questions) + 1), questions):
+for num, question in enumerate(questions, 1):
     print()
     print(question.build_question(num))
     question.is_ask = True

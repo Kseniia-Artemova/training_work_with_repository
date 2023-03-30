@@ -2,6 +2,8 @@ class Question:
     """
     Класс, содержащий в себе свойства и методы вопросов для игры
     """
+    POINTS_PER_ANSWER = 10
+
     text_question = None
     complexity = 0
     correct_answer = None
@@ -19,9 +21,9 @@ class Question:
         return f"Question("\
                f"'text_question'='{self.text_question}'," \
                f"'complexity'='{self.complexity}'," \
-               f"'correct_answer'='{self.correct_answer}'" \
-               f"'is_ask'='{self.is_ask}'" \
-               f"'user_answer'='{self.user_answer}'" \
+               f"'correct_answer'='{self.correct_answer}'," \
+               f"'is_ask'='{self.is_ask}'," \
+               f"'user_answer'='{self.user_answer}'," \
                f"'points_awarded'='{self.points_awarded})'"
 
     def build_question(self, num: int) -> str:
@@ -44,7 +46,7 @@ class Question:
         Возвращает количество баллов за правильный ответ
         в зависимости от сложности вопроса
         """
-        return self.complexity * 10
+        return self.complexity * self.POINTS_PER_ANSWER
 
     def build_feedback(self) -> str:
         """

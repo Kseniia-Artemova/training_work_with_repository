@@ -1,6 +1,6 @@
 import json
 from random import shuffle
-from My_Packages.Homework_8.class_Question import *
+from class_Question import Question
 
 
 def create_pull_questions(path_file: str) -> list:
