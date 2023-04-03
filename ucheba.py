@@ -2120,3 +2120,84 @@
 #         return f"Flight(city_from='{self.city_from}', city_to='{self.city_to}')"
 #
 # print(Flight(input(), input()))
+
+
+# class MyClass:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def plus_something(self, num):
+#         self.age += num
+#
+# my_class_1 = MyClass()
+# my_class_2 = MyClass()
+
+#
+# class Translator:
+#     dictionary = dict()
+#
+#     def add(self, eng, rus):
+#         if eng in self.dictionary:
+#             if not rus in self.dictionary[eng]:
+#                 self.dictionary[eng] = self.dictionary[eng] + [rus]
+#         else:
+#             self.dictionary[eng] = [rus]
+#
+#     def remove(self, eng):
+#         self.dictionary.pop(eng, False)
+#
+#     def translate(self, eng):
+#         return self.dictionary.get(eng)
+#
+#
+# tr = Translator()
+#
+# tr.add("tree", "дерево")
+# tr.add("car", "машина")
+# tr.add("car", "автомобиль")
+# tr.add("leaf", "лист")
+# tr.add("river", "река")
+# tr.add("go", "идти")
+# tr.add('go', 'идти')
+# tr.add("go", "ехать")
+# tr.add("go", "ходить")
+# tr.add("milk", "молоко")
+#
+# tr.remove("car")
+#
+# print(" ".join(tr.translate("go")))
+# print(tr.dictionary)
+
+#
+# from dataclasses import dataclass
+#
+# @dataclass
+# class Person:
+#     name: str
+#     age: int
+#     profession: str = "unknown"
+#
+# person1 = Person("Sergey", 25)
+# person2 = Person("Naomy", 30, "")
+#
+# print(person1)
+# print(person2)
+
+
+# print(bin(10))
+
+# print(hex(65536))
+
+
+
+
+
+
+
+
+
+
+
+
+
