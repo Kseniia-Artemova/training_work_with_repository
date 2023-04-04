@@ -41,19 +41,26 @@ def main():
         if user_answer in ['стоп', 'stop']:
             break
         elif len(user_answer) < min_letters:
-            print("Слишком короткое слово.\n\nЕщё попытка:")
+            print(f"Слишком короткое слово.\n\n"
+                  f"Слово: {word}\n"
+                  f"Ещё попытка:")
         elif not game_word.check_word(user_answer):
-            print("Неверно!\n\nЕщё попытка:")
+            print(f"Неверно!\n\n"
+                  f"Слово: {word}\n"
+                  f"Ещё попытка:")
         elif repeat:
-            print("Это слово уже было.\n\nЕщё попытка:")
+            print(f"Это слово уже было.\n\n"
+                  f"Слово: {word}\n"
+                  f"Ещё попытка:")
         else:
             player.add_word(user_answer)
-            print("Верно!")
+            print("Верно!\n")
             if player.get_count_words() == game_word.get_count_words():
                 print("Вы отгадали все слова!")
                 break
             else:
-                print("\nСледующее слово:")
+                print(f"Слово: {word}\n"
+                      f"Следующее слово:")
 
     # Вывод сообщения об отгаданных словах, окончание 'слов' изменяется
     # в зависимости от количества, для грамматически корректного вывода
