@@ -1,5 +1,5 @@
 from utils import load_random_word, get_ending
-from Player import Player
+from player import Player
 
 
 def main():
@@ -42,13 +42,10 @@ def main():
             break
         elif len(user_answer) < min_letters:
             print("Слишком короткое слово.\n\nЕщё попытка:")
-            continue
         elif not game_word.check_word(user_answer):
             print("Неверно!\n\nЕщё попытка:")
-            continue
         elif repeat:
             print("Это слово уже было.\n\nЕщё попытка:")
-            continue
         else:
             player.add_word(user_answer)
             print("Верно!")
