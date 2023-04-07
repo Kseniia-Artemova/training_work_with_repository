@@ -1,13 +1,13 @@
 from utils import load_random_word, get_ending
 from player import Player
 
+# Объявляем константы: путь к внешнему ресурсу с JSON-файлом
+# и слово, у которого планируем изменять окончание для вывода
+# в конце программы
+LINK_TO_WORDS = "https://api.npoint.io/fa38747fc7269e16d8be"
+MODIFIED_WORD = "слов"
 
 def main():
-    # Объявляем константы: путь к внешнему ресурсу с JSON-файлом
-    # и слово, у которого планируем изменять окончание для вывода
-    # в конце программы
-    LINK_TO_WORDS = "https://api.npoint.io/fa38747fc7269e16d8be"
-    MODIFIED_WORD = "слов"
 
     # Создаем объект класса BasicWord для игры с такими атрибутами как:
     # исходное слово и список вариантов слов, составленных из исходного
@@ -33,7 +33,7 @@ def main():
     # Цикл, принимающий ответы игрока и проверяющий их на соответствие
     # требованиям игры. При вводе игроком слов 'стоп' или 'stop'
     # цикл прерывается
-    while True:
+    while player.get_count_words() != game_word.get_count_words():
 
         user_answer = input().lower()
         repeat = player.check_repeat(user_answer)
@@ -54,13 +54,11 @@ def main():
                   f"Ещё попытка:")
         else:
             player.add_word(user_answer)
-            print("Верно!\n")
-            if player.get_count_words() == game_word.get_count_words():
-                print("Вы отгадали все слова!")
-                break
-            else:
-                print(f"Слово: {word}\n"
-                      f"Следующее слово:")
+            print(f"Верно!\n\n"
+                  f"Слово: {word}\n"
+                  f"Следующее слово:")
+    else:
+        print("Вы отгадали все слова!")
 
     # Вывод сообщения об отгаданных словах, окончание 'слов' изменяется
     # в зависимости от количества, для грамматически корректного вывода
