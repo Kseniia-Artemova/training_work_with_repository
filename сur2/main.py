@@ -33,7 +33,7 @@ def main():
     # Цикл, принимающий ответы игрока и проверяющий их на соответствие
     # требованиям игры. При вводе игроком слов 'стоп' или 'stop'
     # цикл прерывается
-    while player.get_count_words() != game_word.get_count_words():
+    while True:
 
         user_answer = input().lower()
         repeat = player.check_repeat(user_answer)
@@ -54,11 +54,13 @@ def main():
                   f"Ещё попытка:")
         else:
             player.add_word(user_answer)
-            print(f"Верно!\n\n"
-                  f"Слово: {word}\n"
-                  f"Следующее слово:")
-    else:
-        print("Вы отгадали все слова!")
+            print("Верно!\n")
+            if player.get_count_words() == game_word.get_count_words():
+                print("Вы отгадали все слова!")
+                break
+            else:
+                print(f"Слово: {word}\n"
+                      f"Следующее слово:")
 
     # Вывод сообщения об отгаданных словах, окончание 'слов' изменяется
     # в зависимости от количества, для грамматически корректного вывода
