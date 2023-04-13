@@ -2188,9 +2188,173 @@
 # print(bin(10))
 
 # print(hex(65536))
+#
+# import random
+#
+#
+# class Line:
+#     def __init__(self, a, b, c, d):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+#
+# class Rect:
+#     def __init__(self, a, b, c, d):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+#
+# class Ellipse:
+#     def __init__(self, a, b, c, d):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+#
+# elements = []
+#
+# for _ in range(217):
+#     a, b, c, d = random.sample(range(1, 100), 4)
+#     new_obj = random.choice([Rect, Line, Ellipse])(a, b, c, d)
+#     elements.append(new_obj)
+#
+#
+# for element in elements:
+#     if element.__class__ == Line:
+#         element.sp, element.ep = (0, 0), (0, 0)
+
+# здесь объявите класс TriangleChecker
+# class TriangleChecker:
+#
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def is_triangle(self):
+#         sides = [self.a, self.b, self.c]
+#         if any([isinstance(side, bool) for side in sides]):
+#             return 1
+#         types = list(map(lambda x: isinstance(x, int) or isinstance(x, float), sides))
+#         if (not all(types)) or any([side <= 0 for side in sides]):
+#             return 1
+#         sides.sort()
+#         if sides[-1] >= sum(sides[:-1]):
+#             return 2
+#         return 3
+#
+#
+# a, b, c = map(int, input().split())  # эту строчку не менять
+# # здесь создайте экземпляр tr класса TriangleChecker и вызовите метод is_triangle() с выводом информации на экран
+# tr = TriangleChecker(a, b, c)
+# print(tr.is_triangle())
 
 
+# class CPU:
+#
+#     def __init__(self, name, fr):
+#         self.name = name
+#         self.fr = fr
+#
+#
+# class Memory:
+#
+#     def __init__(self, name, volume):
+#         self.name = name
+#         self.volume = volume
+#
+#
+# class MotherBoard:
+#
+#     def __init__(self, name, cpu, mem_slots):
+#         self.name = name
+#         self.cpu = cpu
+#         self.total_mem_slots = 4
+#         self.mem_slots = mem_slots
+#
+#     def get_config(self):
+#         memory = ["{name} - {volume}".format(name=slot.name, volume=slot.volume) for slot in self.mem_slots]
+#         return [f'Материнская плата: {self.name}',
+#                 f'Центральный процессор: {self.cpu.name}, {self.cpu.fr}',
+#                 f'Слотов памяти: {len(self.mem_slots)}',
+#                 f'Память: {"; ".join(memory)}']
+#
+# mb = MotherBoard("мать", CPU("проц", 450), [Memory("память_1", 8), Memory("память_2", 16)])
+#
+# print(mb.get_config())
 
 
+# # здесь пишите программу
+# class Cart:
+#
+#     def __init__(self):
+#         self.goods = []
+#
+#     def add(self, gd):
+#         self.goods.append(gd)
+#
+#     def remove(self, indx):
+#         self.goods.pop(indx)
+#
+#     def get_list(self):
+#         return [f'{i.name}: {i.price}' for i in self.goods]
+#
+#
+# class Supple:
+#
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+#
+# class Table(Supple):
+#     pass
+#
+#
+# class TV(Supple):
+#     pass
+#
+#
+# class Notebook(Supple):
+#     pass
+#
+#
+# class Cup(Supple):
+#     pass
+#
+#
+# tv_1 = TV("Sony-42", 54000)
+# tv_2 = TV("Panasonic, A-812", 128000)
+# nb_1 = Notebook("HP-130", 82000)
+# nb_2 = Notebook("ASUS", 97000)
+# tb_1 = Table("Весна", 8000)
+# cp_1 = Cup("Белая кружка", 100)
+#
+# cart = Cart()
+#
+# for i in [tv_1, tv_2, nb_1, nb_2, tb_1, cp_1]:
+#     cart.add(i)
 
 
+# import sys
+#
+#
+# # здесь объявляются все необходимые классы
+# class ListObject:
+#
+#     def __init__(self, data):
+#         self.data = data[0]
+#         self.next_obj = None
+#         if len(data[1:]) > 0:
+#             self.link(ListObject(data[1:]))
+#
+#     def link(self, obj):
+#         self.next_obj = obj
+#
+#
+# # считывание списка из входного потока (эту строку не менять)
+# lst_in = list(map(str.strip, sys.stdin.readlines()))  # список lst_in в программе не менять
+#
+# head_obj = ListObject(lst_in)
+
+
+# print(repr(chr(32)))
