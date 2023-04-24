@@ -2358,3 +2358,199 @@
 
 
 # print(repr(chr(32)))
+
+
+# class SingletonFive:
+#     count = 0
+#     instance = None
+#
+#     def __new__(cls, *args, **kwargs):
+#         if cls.count < 5:
+#             cls.instance = super().__new__(cls)
+#         cls.count += 1
+#         return cls.instance
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# objs = [SingletonFive(str(n)) for n in range(10)]
+# [print(id(i)) for i in objs]
+
+
+# TYPE_OS = 1  # 1 - Windows; 2 - Linux
+#
+#
+# class DialogWindows:
+#     name_class = "DialogWindows"
+#
+#
+# class DialogLinux:
+#     name_class = "DialogLinux"
+#
+#
+# class Dialog:
+#
+#     def __new__(cls, *args, **kwargs):
+#         obj = DialogWindows() if TYPE_OS == 1 else DialogLinux()
+#         setattr(obj, "name", args[0])
+#         return obj
+#
+#
+# new_o = Dialog("123")
+# print(new_o.__dict__)
+
+
+# class Point:
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def clone(self):
+#         copy = super().__new__(type(self))
+#         copy.__dict__.update(self.__dict__)
+#         return copy
+#
+#
+# pt = Point(4, 8)
+# pt_clone = pt.clone()
+# print(pt.__dict__, pt_clone.__dict__)
+# print(id(pt), id(pt_clone))
+
+
+# class Loader:
+#     def parse_format(self, string, factory):
+#         seq = factory.build_sequence()
+#         for sub in string.split(","):
+#             item = factory.build_number(sub)
+#             seq.append(item)
+#
+#         return seq
+#
+#
+# class Factory:
+#     __sac = 4
+#
+#     def build_sequence(self):
+#         return []
+#
+#     def build_number(self, sub):
+#         return float(sub)
+#
+#
+# # эти строчки не менять!
+# ld = Loader()
+# s = input()
+# res = ld.parse_format(s, Factory())
+
+# class Vector:
+#     MIN_COORD = 0
+#     MAX_COORD = 100
+#
+#     @classmethod
+#     def validate(cls, arg):
+#         return cls.MIN_COORD <= arg <= cls.MAX_COORD
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def get_coord(self):
+#         return self.x, self.y
+#
+#
+# obj = Vector(5, 19)
+# print(obj.get_coord())
+# print(obj.validate(190))
+
+
+# from string import ascii_lowercase, digits
+#
+#
+# class General:
+#     CHARS = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя " + ascii_lowercase
+#     CHARS_CORRECT = CHARS + CHARS.upper() + digits
+#     a = None
+#
+#     def __init__(self, name, size=10):
+#         self.name = self.check_name(name)
+#         self.size = size
+#         self.a = self.set_type()
+#
+#     @classmethod
+#     def set_type(cls):
+#         return cls.a
+#
+#     def get_html(self):
+#         return f"<p class='{self.a}'>{self.name}: <input type='text' size={self.size} />"
+#
+#     @classmethod
+#     def check_name(cls, name):
+#         if not 3 <= len(name) <= 50:
+#             raise ValueError("некорректное поле name")
+#         for i in name.lower():
+#             if i not in cls.CHARS_CORRECT:
+#                 raise ValueError("некорректное поле name")
+#         return name
+#
+#
+# class TextInput(General):
+#     a = "login"
+#
+#
+# class PasswordInput(General):
+#     a = "password"
+#
+#
+# class FormLogin:
+#     def __init__(self, lgn, psw):
+#         self.login = lgn
+#         self.password = psw
+#
+#     def render_template(self):
+#         return "\n".join(['<form action="#">', self.login.get_html(), self.password.get_html(), '</form>'])
+#
+#
+# # эти строчки не менять
+# login = FormLogin(TextInput("Логин"), PasswordInput("Пароль"))
+# html = login.render_template()
+# print(html)
+
+# class Video:
+#
+#     def create(self, name):
+#         setattr(self, "name", name)
+#
+#     def play(self):
+#         print(f"воспроизведение видео {self.name}")
+#
+#
+# class YouTube:
+#     videos = []
+#
+#     @classmethod
+#     def add_video(cls, video):
+#         cls.videos.append(video)
+#
+#     @classmethod
+#     def play(cls, video_indx):
+#         cls.videos[video_indx].play()
+#
+#
+# v1 = Video()
+# v1.create("Python")
+# v2 = Video()
+# v2.create("Python ООП")
+# YouTube.add_video(v1)
+# YouTube.add_video(v2)
+# YouTube.play(0)
+# YouTube.play(1)
+
+
+# class Mistery(list):
+#     pass
+#
+# a = Mistery()
+# print(a)
+

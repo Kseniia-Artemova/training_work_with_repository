@@ -88,3 +88,4 @@ class GamePole:
 
 pole_game = GamePole(10, 12)
 pole_game.show()
+print(pole_game)
