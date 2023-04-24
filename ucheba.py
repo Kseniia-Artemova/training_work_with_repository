@@ -2554,3 +2554,5 @@
 # a = Mistery()
 # print(a)
 
+
+print("Dla proverki")
